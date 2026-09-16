@@ -18,7 +18,7 @@ export default function Hero() {
         to-white
       "
     >
-      {/* Background glow */}
+      {/* Background glows */}
       <div
         className="
           pointer-events-none
@@ -104,12 +104,12 @@ export default function Hero() {
             className="
               relative
               z-10
-              w-[64vw]
-              max-w-[285px]
-              sm:w-[58vw]
+              w-[62vw]
+              max-w-[280px]
+              sm:w-[54vw]
               sm:max-w-[330px]
               lg:w-full
-              lg:max-w-[500px]
+              lg:max-w-[430px]
             "
           >
             <motion.div
@@ -123,44 +123,53 @@ export default function Hero() {
               }}
               className="relative"
             >
-              {/* Outer soft glow */}
+              {/* Soft outer glow */}
               <div
                 className="
                   pointer-events-none
                   absolute
-                  inset-[-4px]
-                  rounded-full
+                  inset-[-5px]
+                  rounded-[50%]
                   bg-white/60
                   blur-md
                 "
               />
 
               {/* =================================================
-                  TRUE ROUND PHOTO FRAME
+                  VERTICAL OVAL PORTRAIT
               ================================================= */}
               <div
                 className="
                   relative
-                  aspect-square
+                  mx-auto
+                  h-[76vw]
+                  max-h-[370px]
                   w-full
+                  max-w-[280px]
                   overflow-hidden
-                  rounded-full
+                  rounded-[50%]
                   bg-white
                   p-2
                   shadow-2xl
                   ring-4
                   ring-white/70
+                  sm:h-[400px]
+                  sm:max-h-none
+                  sm:max-w-[330px]
+                  sm:p-2.5
+                  lg:h-[520px]
+                  lg:max-w-[430px]
                 "
               >
-                {/* Circular image clipping layer */}
+                {/* Image */}
                 <div
                   className="
                     relative
                     h-full
                     w-full
                     overflow-hidden
-                    rounded-full
-                    bg-gray-300
+                    rounded-[50%]
+                    bg-gray-200
                   "
                 >
                   <Image
@@ -168,15 +177,30 @@ export default function Hero() {
                     alt="Shree Pingalshinh Patabhai Narela"
                     fill
                     priority
-                    quality={95}
+                    quality={100}
                     sizes="
-                      (max-width: 640px) 64vw,
-                      (max-width: 1024px) 58vw,
-                      500px
+                      (max-width: 640px) 62vw,
+                      (max-width: 1024px) 54vw,
+                      430px
                     "
                     className="
-                      rounded-full
+                      h-full
+                      w-full
+                      rounded-[50%]
                       object-contain
+                      brightness-[1.08]
+                      contrast-[1.03]
+                    "
+                  />
+
+                  {/* Very subtle brightness layer */}
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      inset-0
+                      rounded-[50%]
+                      bg-white/5
                     "
                   />
                 </div>
