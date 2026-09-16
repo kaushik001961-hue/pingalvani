@@ -1,10 +1,11 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 
 export const metadata = {
-  title: "State Level Poet",
-  description: "Official portfolio of a State Level Poet",
+  title: "Pingalshinh — Poet • Writer • Performer",
+  description: "Official poetry collection and literary portfolio of Pingalshinh.",
 };
 
 export default function RootLayout({
@@ -13,11 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="bg-white text-gray-900">
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
