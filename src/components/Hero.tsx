@@ -9,19 +9,55 @@ export default function Hero() {
   return (
     <section
       className="
-        relative min-h-screen
+        relative
+        min-h-screen
         overflow-x-hidden
-        bg-gradient-to-br from-orange-200 via-orange-100 to-white
+        bg-gradient-to-br
+        from-orange-200
+        via-orange-100
+        to-white
       "
     >
-      {/* Background glows */}
-      <div className="pointer-events-none absolute left-[-120px] top-20 h-[360px] w-[360px] rounded-full bg-orange-300/30 blur-3xl sm:h-[450px] sm:w-[450px]" />
-
-      <div className="pointer-events-none absolute bottom-0 right-[-140px] h-[420px] w-[420px] rounded-full bg-rose-300/25 blur-3xl sm:h-[520px] sm:w-[520px]" />
+      {/* Background glow */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-[-120px]
+          top-20
+          h-[360px]
+          w-[360px]
+          rounded-full
+          bg-orange-300/30
+          blur-3xl
+          sm:h-[450px]
+          sm:w-[450px]
+        "
+      />
 
       <div
         className="
-          mx-auto flex w-full max-w-7xl flex-col
+          pointer-events-none
+          absolute
+          bottom-0
+          right-[-140px]
+          h-[420px]
+          w-[420px]
+          rounded-full
+          bg-rose-300/25
+          blur-3xl
+          sm:h-[520px]
+          sm:w-[520px]
+        "
+      />
+
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-7xl
+          flex-col
           items-center
           px-5
           pb-12
@@ -36,8 +72,8 @@ export default function Hero() {
         "
       >
         {/* =====================================================
-            MOBILE PORTRAIT
-            ===================================================== */}
+            PORTRAIT
+        ===================================================== */}
         <div
           className="
             order-1
@@ -45,22 +81,29 @@ export default function Hero() {
             w-full
             shrink-0
             justify-center
-            pt-5
-            sm:pt-7
+            pt-16
+            sm:pt-16
             lg:order-2
             lg:w-1/2
             lg:pt-0
           "
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{
+              opacity: 0,
+              scale: 0.94,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
             transition={{
               duration: 0.8,
               ease: "easeOut",
             }}
             className="
-              relative z-10
+              relative
+              z-10
               w-[64vw]
               max-w-[285px]
               sm:w-[58vw]
@@ -70,7 +113,9 @@ export default function Hero() {
             "
           >
             <motion.div
-              animate={{ y: [0, -7, 0] }}
+              animate={{
+                y: [0, -7, 0],
+              }}
               transition={{
                 duration: 5,
                 repeat: Infinity,
@@ -78,53 +123,63 @@ export default function Hero() {
               }}
               className="relative"
             >
-              {/* Soft glow */}
+              {/* Outer soft glow */}
               <div
                 className="
                   pointer-events-none
                   absolute
-                  inset-0
-                  scale-[1.04]
+                  inset-[-4px]
                   rounded-full
-                  bg-white/50
+                  bg-white/60
                   blur-md
                 "
               />
 
-              {/* Portrait frame */}
+              {/* =================================================
+                  TRUE ROUND PHOTO FRAME
+              ================================================= */}
               <div
                 className="
                   relative
                   aspect-square
+                  w-full
                   overflow-hidden
                   rounded-full
                   bg-white
                   p-2
                   shadow-2xl
                   ring-4
-                  ring-white/60
-                  sm:p-2.5
+                  ring-white/70
                 "
               >
-                <Image
-                  src="/poet.jpg"
-                  alt="Shree Pingalshinh Patabhai Narela"
-                  width={700}
-                  height={700}
-                  priority
-                  quality={95}
-                  sizes="
-                    (max-width: 640px) 64vw,
-                    (max-width: 1024px) 58vw,
-                    500px
-                  "
+                {/* Circular image clipping layer */}
+                <div
                   className="
+                    relative
                     h-full
                     w-full
+                    overflow-hidden
                     rounded-full
-                    object-contain
+                    bg-gray-300
                   "
-                />
+                >
+                  <Image
+                    src="/poet.jpg"
+                    alt="Shree Pingalshinh Patabhai Narela"
+                    fill
+                    priority
+                    quality={95}
+                    sizes="
+                      (max-width: 640px) 64vw,
+                      (max-width: 1024px) 58vw,
+                      500px
+                    "
+                    className="
+                      rounded-full
+                      object-contain
+                    "
+                  />
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -132,7 +187,7 @@ export default function Hero() {
 
         {/* =====================================================
             CONTENT
-            ===================================================== */}
+        ===================================================== */}
         <div
           className="
             order-2
@@ -181,7 +236,9 @@ export default function Hero() {
               "
             >
               Shree Pingalshinh
-              <span className="block">Patabhai Narela</span>
+              <span className="block">
+                Patabhai Narela
+              </span>
             </motion.h1>
 
             {/* Profession */}
@@ -328,11 +385,25 @@ export default function Hero() {
                   key={item.label}
                   className="px-3 text-center"
                 >
-                  <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+                  <h3
+                    className="
+                      text-2xl
+                      font-bold
+                      text-gray-900
+                      sm:text-3xl
+                    "
+                  >
                     {item.num}
                   </h3>
 
-                  <p className="mt-1 text-xs text-gray-500 sm:text-sm">
+                  <p
+                    className="
+                      mt-1
+                      text-xs
+                      text-gray-500
+                      sm:text-sm
+                    "
+                  >
                     {item.label}
                   </p>
                 </div>
