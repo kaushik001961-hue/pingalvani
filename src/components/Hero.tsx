@@ -12,43 +12,88 @@ export default function Hero() {
       <div className="pointer-events-none absolute left-[-120px] top-20 h-[360px] w-[360px] rounded-full bg-orange-300/30 blur-3xl sm:h-[450px] sm:w-[450px]" />
       <div className="pointer-events-none absolute bottom-0 right-[-140px] h-[420px] w-[420px] rounded-full bg-rose-300/25 blur-3xl sm:h-[520px] sm:w-[520px]" />
 
-      <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center px-5 pb-12 pt-8 sm:px-8 sm:pt-12 lg:flex-row lg:items-center lg:px-12 lg:py-16">
-        {/* PHOTO - first and centered on mobile */}
-        <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
+      <div
+        className="
+          mx-auto flex min-h-screen w-full max-w-7xl flex-col
+          items-center
+          px-5 pb-12 pt-10
+          sm:px-8 sm:pt-12
+          lg:flex-row lg:items-center lg:px-12 lg:py-16
+        "
+      >
+        {/* =========================
+            PORTRAIT
+        ========================== */}
+        <div
+          className="
+            order-1 flex w-full justify-center
+            lg:order-2 lg:w-1/2
+          "
+        >
           <motion.div
-            initial={{ opacity: 0, scale: 0.88 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative z-10 w-[82vw] max-w-[360px] sm:max-w-[410px] lg:max-w-[500px]"
+            className="
+              relative z-10
+              w-[70vw] max-w-[300px]
+              sm:w-[64vw] sm:max-w-[340px]
+              lg:w-full lg:max-w-[500px]
+            "
           >
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="relative"
             >
-              <div className="absolute inset-0 scale-[1.04] rounded-full bg-white/35 blur-md" />
+              {/* Soft glow behind portrait */}
+              <div className="absolute inset-0 scale-[1.04] rounded-full bg-white/40 blur-md" />
 
-              <Image
-                src="/poet.jpg"
-                alt="Shree Pingalshinh Patabhai Narela"
-                width={600}
-                height={600}
-                priority
-                quality={95}
-                sizes="(max-width: 1024px) 82vw, 500px"
-                className="relative aspect-square w-full rounded-full object-cover shadow-2xl ring-8 ring-white/40"
-              />
+              {/* Portrait */}
+              <div className="relative aspect-square overflow-hidden rounded-full bg-white/40 p-2 shadow-2xl ring-4 ring-white/50 sm:p-2.5">
+                <Image
+                  src="/poet.jpg"
+                  alt="Shree Pingalshinh Patabhai Narela"
+                  width={600}
+                  height={600}
+                  priority
+                  quality={95}
+                  sizes="
+                    (max-width: 640px) 70vw,
+                    (max-width: 1024px) 64vw,
+                    500px
+                  "
+                  className="
+                    h-full w-full rounded-full
+                    object-cover
+                  "
+                />
+              </div>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* CONTENT */}
-        <div className="order-2 z-10 mt-8 w-full text-center lg:order-1 lg:mt-0 lg:w-1/2 lg:pr-12 lg:text-left">
+        {/* =========================
+            CONTENT
+        ========================== */}
+        <div
+          className="
+            order-2 z-10 mt-8 w-full
+            text-center
+            lg:order-1 lg:mt-0 lg:w-1/2
+            lg:pr-12 lg:text-left
+          "
+        >
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="show"
           >
+            {/* Quote */}
             <motion.p
               variants={fadeUp}
               className="text-sm font-semibold text-rose-700 sm:text-base"
@@ -56,31 +101,52 @@ export default function Hero() {
               “शब्द मेरी पहचान, कविता मेरी जान”
             </motion.p>
 
+            {/* Name */}
             <motion.h1
               variants={fadeUp}
-              className="mt-3 font-serif text-4xl font-bold leading-tight text-rose-800 sm:text-5xl lg:text-6xl"
+              className="
+                mt-3 font-serif font-bold
+                text-4xl leading-tight text-rose-800
+                sm:text-5xl
+                lg:text-6xl
+              "
             >
               Shree Pingalshinh
               <span className="block">Patabhai Narela</span>
             </motion.h1>
 
+            {/* Profession */}
             <motion.h2
               variants={fadeUp}
-              className="mt-4 text-xl font-semibold leading-relaxed text-rose-800 sm:text-2xl"
+              className="
+                mt-4 text-xl font-semibold leading-relaxed
+                text-rose-800
+                sm:text-2xl
+              "
             >
               Poet • Writer • Performer • Storyteller
             </motion.h2>
 
+            {/* Location */}
             <motion.h3
               variants={fadeUp}
-              className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl"
+              className="
+                mt-4 text-2xl font-bold text-gray-900
+                sm:text-3xl
+              "
             >
               Bhavnagar State
             </motion.h3>
 
+            {/* Description */}
             <motion.p
               variants={fadeUp}
-              className="mx-auto mt-5 max-w-xl text-base leading-8 text-gray-600 sm:text-lg lg:mx-0"
+              className="
+                mx-auto mt-5 max-w-xl
+                text-base leading-8 text-gray-600
+                sm:text-lg
+                lg:mx-0
+              "
             >
               कविताएँ जो दिल को छू जाएं, विचार जो जीवन बदल दें, और शब्द जो
               हमेशा याद रहें।
@@ -89,18 +155,40 @@ export default function Hero() {
             {/* Buttons */}
             <motion.div
               variants={fadeUp}
-              className="mt-7 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
+              className="
+                mt-7 flex flex-col
+                justify-center gap-4
+                sm:flex-row
+                lg:justify-start
+              "
             >
               <Link
                 href="/poems"
-                className="inline-flex min-h-14 items-center justify-center rounded-full bg-rose-800 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:scale-[1.03] hover:bg-rose-900"
+                className="
+                  inline-flex min-h-14 items-center justify-center
+                  rounded-full bg-rose-800
+                  px-8 py-3
+                  text-base font-semibold text-white
+                  shadow-lg
+                  transition
+                  hover:scale-[1.03]
+                  hover:bg-rose-900
+                "
               >
                 Read Poems
               </Link>
 
               <button
                 type="button"
-                className="inline-flex min-h-14 items-center justify-center rounded-full border-2 border-rose-800 px-8 py-3 text-base font-semibold text-rose-800 transition hover:bg-white/50 hover:scale-[1.03]"
+                className="
+                  inline-flex min-h-14 items-center justify-center
+                  rounded-full border-2 border-rose-800
+                  px-8 py-3
+                  text-base font-semibold text-rose-800
+                  transition
+                  hover:scale-[1.03]
+                  hover:bg-white/50
+                "
               >
                 Listen 🎧
               </button>
@@ -109,7 +197,12 @@ export default function Hero() {
             {/* Stats */}
             <motion.div
               variants={fadeUp}
-              className="mx-auto mt-9 grid max-w-md grid-cols-3 divide-x divide-gray-400/40 lg:mx-0 lg:max-w-lg"
+              className="
+                mx-auto mt-9 grid max-w-md
+                grid-cols-3
+                divide-x divide-gray-400/40
+                lg:mx-0 lg:max-w-lg
+              "
             >
               {[
                 { num: "500+", label: "Poems" },
@@ -120,6 +213,7 @@ export default function Hero() {
                   <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl">
                     {item.num}
                   </h3>
+
                   <p className="mt-1 text-xs text-gray-500 sm:text-sm">
                     {item.label}
                   </p>
